@@ -1,2 +1,2 @@
 # Treat XML as text, normalize line endings, and enable clean diffs
-*.xml text diff=xml eol=lf
+*.xml text diff=xml eol=lf linguist-language=XML
