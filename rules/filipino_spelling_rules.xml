@@ -1,12 +1,13 @@
 <!-- Filipino Rules -->
 <rules>
     <!-- Define a new rule -->
-    <rule id="SIMPLE_EXAMPLE_RULE" name="Example of a simple rule">
+    <rule id="VOWEL_REPETITION" name="Vowel Repetition Rule">
         <pattern>
-            <token>as long</token>
-            <token>well as</token>
+            <token regexp="yes">^([aeiouAEIOU])\1</token>
         </pattern>
-        <message>The phrase "<match no="1"/> <match no="2"/>" might be incorrect.</message>
-        <suggestion>as long as well as</suggestion>
+        <message>If a word starts with a vowel, only the vowel must be repeated once</message>
+        <suggestion correction="aakyat">aaakyat</suggestion>
+        <suggestion correction="iibig">iiibig</suggestion>
+        <suggestion correction="uubo">uuubo</suggestion>
     </rule>
 </rules>
