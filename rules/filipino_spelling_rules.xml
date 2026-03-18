@@ -1,0 +1,12 @@
+<!-- Filipino Rules -->
+<rules>
+    <!-- Define a new rule -->
+    <rule id="SIMPLE_EXAMPLE_RULE" name="Example of a simple rule">
+        <pattern>
+            <token>as long</token>
+            <token>well as</token>
+        </pattern>
+        <message>The phrase "<match no="1"/> <match no="2"/>" might be incorrect.</message>
+        <suggestion>as long as well as</suggestion>
+    </rule>
+</rules>
