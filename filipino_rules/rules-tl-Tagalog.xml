@@ -1,0 +1,13 @@
+<language name="Tagalog" code="tl">
+    <rules>
+        <rule id="VOWEL_REPETITION" name="Vowel Repetition Rule">
+            <pattern>
+                <token regexp="true">^([aeiouAEIOU])\1</token>
+            </pattern>
+            <message>If a word starts with a vowel, only the vowel must be repeated once</message>
+            <example correction="aakyat">aaakyat</example>
+            <example correction="iibig">iiibig</example>
+            <example correction="uubo">uuubo</example>
+        </rule>
+    </rules>
+</language>
