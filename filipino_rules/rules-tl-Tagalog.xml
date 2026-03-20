@@ -9,10 +9,8 @@
                             .*[rR]([ia]|aw|ay)</exception></token>
                         <token regexp="yes">d(in|aw|ito|iyan|oon)</token>
                     </pattern>
-                    <message>
-                        [KWF-MMP-8.1] Orthography Violation: Invalid post-vocalic 'd'. Expected 'r'
-                        after a vowel or semivowel.
-                    </message>
+                    <message>[KWF-MMP-8.1] Orthography Violation: Invalid post-vocalic 'd'. Expected
+                        'r' after a vowel or semivowel.</message>
                     <suggestion>
                         <match no="2" regexp_match="^d" regexp_replace="r"></match>
                     </suggestion>
@@ -34,10 +32,8 @@
                             .*[rR]([ia]|aw|ay)</exception></token>
                         <token regexp="yes">D(in|aw|ito|iyan|oon)</token>
                     </pattern>
-                    <message>
-                        [KWF-MMP-8.1] Orthography Violation: Invalid post-vocalic 'D'. Expected 'R'
-                        after a vowel or semivowel.
-                    </message>
+                    <message>[KWF-MMP-8.1] Orthography Violation: Invalid post-vocalic 'D'. Expected
+                        'R' after a vowel or semivowel.</message>
                     <suggestion>
                         <match no="2" regexp_match="^D" regexp_replace="R"></match>
                     </suggestion>
