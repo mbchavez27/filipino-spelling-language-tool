@@ -2,16 +2,15 @@
     <rules>
         <category id="FILIPINO_RULES" name="Filipino Rules using MMP and OP">
             <rulegroup id="D-TO-R" name="Din/Daw to Rin/Raw Mutation">
+
                 <rule>
                     <pattern>
-                        <token regexp="yes">.*[aeiouwyAEIOUWY] <exception regexp="yes">
-                            .*[rR]([ia]|aw|ay)</exception>
-                        </token>
+                        <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">
+                            .*[rR]([ia]|aw|ay)</exception></token>
                         <token regexp="yes">d(in|aw|ito|iyan|oon)</token>
                     </pattern>
-                    <message>According to KWF Manwal sa Masinop na Pagsulat, the letter “d” changes
-                        to
-                        “r” when the preceding word ends in a vowel or a semivowel (w, y).</message>
+                    <message>According to KWF Manwal sa Masinop na Pagsulat, the letter "d" changes
+                        to "r" when the preceding word ends in a vowel or a semivowel (w, y).</message>
                     <suggestion>
                         <match no="2" regexp_match="^d" regexp_replace="r"></match>
                     </suggestion>
@@ -26,30 +25,30 @@
                     <example>Sari-sari dito</example>
                     <example>Kutsara diyan</example>
                 </rule>
+
                 <rule>
                     <pattern>
-                        <token regexp="yes">.*[aeiouwyAEIOUWY] <exception regexp="yes">
-                            .*[rR]([ia]|aw|ay)</exception>
-                        </token>
+                        <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">
+                            .*[rR]([ia]|aw|ay)</exception></token>
                         <token regexp="yes">D(in|aw|ito|iyan|oon)</token>
                     </pattern>
-                    <message>According to KWF Manwal sa Masinop na Pagsulat, the letter “D” changes
-                        to
-                        “R” when the preceding word ends in a vowel or a semivowel (w, y).</message>
+                    <message>According to KWF Manwal sa Masinop na Pagsulat, the letter "D" changes
+                        to "R" when the preceding word ends in a vowel or a semivowel (w, y).</message>
                     <suggestion>
                         <match no="2" regexp_match="^D" regexp_replace="R"></match>
                     </suggestion>
 
-                    <example correction="raw">Malaki <marker>Daw</marker></example>
-                    <example correction="roon">Punta tayo <marker>Doon</marker></example>
-                    <example correction="riyan">Bahay <marker>Diyan</marker></example>
-                    <example correction="rin">Gagawin ko <marker>Din</marker></example>
+                    <example correction="Raw">Malaki <marker>Daw</marker></example>
+                    <example correction="Roon">Punta tayo <marker>Doon</marker></example>
+                    <example correction="Riyan">Bahay <marker>Diyan</marker></example>
+                    <example correction="Rin">Gagawin ko <marker>Din</marker></example>
 
                     <example>Maaari Din</example>
                     <example>Araw-araw Daw</example>
                     <example>Sari-sari Dito</example>
                     <example>Kutsara Diyan</example>
                 </rule>
+
             </rulegroup>
         </category>
     </rules>
