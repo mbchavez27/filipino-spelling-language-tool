@@ -7,7 +7,9 @@
             <rule>
                 <pattern>
                     <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">.*[rR]([ia]|aw|ay)</exception></token>
-                    <token regexp="yes">d(in|aw|ito|iyan|oon)</token>
+                    <marker>
+                        <token regexp="yes">d(in|aw|ito|iyan|oon)</token>
+                    </marker>
                 </pattern>
                 <message>[KWF-MMP-8.1] Gamitin ang 'r' sa halip na 'd' pagkatapos ng patinig o semivowel. Dapat ay: <suggestion><match no="2" regexp_match="^d" regexp_replace="r"/></suggestion></message>
                 <short>Maling D/R (Small Letter)</short>
@@ -17,7 +19,9 @@
             <rule>
                 <pattern>
                     <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">.*[rR]([ia]|aw|ay)</exception></token>
-                    <token regexp="yes">D(in|aw|ito|iyan|oon)</token>
+                    <marker>
+                        <token regexp="yes">D(in|aw|ito|iyan|oon)</token>
+                    </marker>
                 </pattern>
                 <message>[KWF-MMP-8.1] Gamitin ang 'R' sa halip na 'D' pagkatapos ng patinig o semivowel. Dapat ay: <suggestion><match no="2" regexp_match="^D" regexp_replace="R"/></suggestion></message>
                 <short>Maling D/R (Capital Letter)</short>
