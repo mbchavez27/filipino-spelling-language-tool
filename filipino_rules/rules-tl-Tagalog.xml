@@ -10,6 +10,7 @@
                     <token regexp="yes">d(in|aw|ito|iyan|oon)</token>
                 </pattern>
                 <message>[KWF-MMP-8.1] Gamitin ang 'r' sa halip na 'd' pagkatapos ng patinig o semivowel. Dapat ay: <suggestion><match no="2" regexp_match="^d" regexp_replace="r"/></suggestion></message>
+                <short>Maling D/R (Small Letter)</short>
                 <example correction="raw">Malaki <marker>daw</marker></example>
                 <example>Maaari din</example>
             </rule>
@@ -19,6 +20,7 @@
                     <token regexp="yes">D(in|aw|ito|iyan|oon)</token>
                 </pattern>
                 <message>[KWF-MMP-8.1] Gamitin ang 'R' sa halip na 'D' pagkatapos ng patinig o semivowel. Dapat ay: <suggestion><match no="2" regexp_match="^D" regexp_replace="R"/></suggestion></message>
+                <short>Maling D/R (Capital Letter)</short>
                 <example correction="Raw">Malaki <marker>Daw</marker></example>
                 <example>Maaari Din</example>
             </rule>
@@ -32,6 +34,7 @@
                     <token regexp="yes">(ano|sino|piso|pito)</token>
                 </pattern>
                 <message>[KWF-MMP-7.5] Ang 'o' ay hindi dapat palitan ng 'u' kapag inuulit ang salitang-ugat. Dapat ay: <suggestion><match no="1" regexp_match="u$" regexp_replace="o"/>-<match no="3"/></suggestion></message>
+                <short>Maling O-to-U</short>
                 <example correction="ano-ano">Sila ay <marker>anu-ano</marker></example>
                 <example>Ang mga ano-ano.</example>
             </rule>
@@ -42,6 +45,7 @@
                     <token regexp="yes">taon</token>
                 </pattern>
                 <message>[KWF-MMP-7.5] Dapat ay: <suggestion>taon-taon</suggestion></message>
+                <short>Maling O-to-U</short>
                 <example correction="taon-taon">Ito ay ginagawa <marker>taun-taon</marker></example>
                 <example>Ito ay ginagawa taon-taon.</example>
             </rule>
@@ -53,6 +57,7 @@
                     <token regexp="yes">ika([0-9]+)</token>
                 </pattern>
                 <message>[KWF-MMP-11.8] Kailangan ng gitling sa 'ika' at numero. Dapat ay: <suggestion><match no="1" regexp_match="ika([0-9]+)" regexp_replace="ika-$1"/></suggestion></message>
+                <short>Kulang sa Gitling</short>
                 <example correction="ika-10">Siya ay nasa <marker>ika10</marker> baitang.</example>
                 <example>Nasa ika-10 baitang na siya.</example>
             </rule>
