@@ -1,55 +1,71 @@
-<language name="Tagalog" code="tl">
-    <rules>
-        <category id="FILIPINO_RULES" name="Filipino Rules using MMP and OP">
-            <rulegroup id="D-TO-R" name="Din/Daw to Rin/Raw Mutation">
+<?xml version="1.0" encoding="UTF-8"?>
+<rules lang="tl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd">
 
-                <rule>
-                    <pattern>
-                        <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">
-                            .*[rR]([ia]|aw|ay)</exception></token>
+    <category id="FILIPINO_RULES" name="Filipino Rules (KWF Standards)">
+        
+        <rulegroup id="D_TO_R" name="Din/Daw to Rin/Raw Mutation">
+            <rule>
+                <pattern>
+                    <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">.*[rR]([ia]|aw|ay)</exception></token>
+                    <marker>
                         <token regexp="yes">d(in|aw|ito|iyan|oon)</token>
-                    </pattern>
-                    <message>[KWF-MMP-8.1] Orthography Violation: Invalid post-vocalic 'd'. Expected
-                        'r' after a vowel or semivowel.</message>
-                    <suggestion>
-                        <match no="2" regexp_match="^d" regexp_replace="r"></match>
-                    </suggestion>
-
-                    <example correction="raw">Malaki <marker>daw</marker></example>
-                    <example correction="roon">Punta tayo <marker>doon</marker></example>
-                    <example correction="riyan">Bahay <marker>diyan</marker></example>
-                    <example correction="rin">Gagawin ko <marker>din</marker></example>
-
-                    <example>Maaari din</example>
-                    <example>Araw-araw daw</example>
-                    <example>Sari-sari dito</example>
-                    <example>Kutsara diyan</example>
-                </rule>
-
-                <rule>
-                    <pattern>
-                        <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">
-                            .*[rR]([ia]|aw|ay)</exception></token>
+                    </marker>
+                </pattern>
+                <message>[KWF-MMP-8.1] Gamitin ang 'r' sa halip na 'd' pagkatapos ng patinig o semivowel. Dapat ay: <suggestion><match no="2" regexp_match="^d" regexp_replace="r"/></suggestion></message>
+                <short>Maling D/R (Small Letter)</short>
+                <example correction="raw">Malaki <marker>daw</marker></example>
+                <example>Maaari din</example>
+            </rule>
+            <rule>
+                <pattern>
+                    <token regexp="yes">.*[aeiouwyAEIOUWY]<exception regexp="yes">.*[rR]([ia]|aw|ay)</exception></token>
+                    <marker>
                         <token regexp="yes">D(in|aw|ito|iyan|oon)</token>
-                    </pattern>
-                    <message>[KWF-MMP-8.1] Orthography Violation: Invalid post-vocalic 'D'. Expected
-                        'R' after a vowel or semivowel.</message>
-                    <suggestion>
-                        <match no="2" regexp_match="^D" regexp_replace="R"></match>
-                    </suggestion>
+                    </marker>
+                </pattern>
+                <message>[KWF-MMP-8.1] Gamitin ang 'R' sa halip na 'D' pagkatapos ng patinig o semivowel. Dapat ay: <suggestion><match no="2" regexp_match="^D" regexp_replace="R"/></suggestion></message>
+                <short>Maling D/R (Capital Letter)</short>
+                <example correction="Raw">Malaki <marker>Daw</marker></example>
+                <example>Maaari Din</example>
+            </rule>
+        </rulegroup>
 
-                    <example correction="Raw">Malaki <marker>Daw</marker></example>
-                    <example correction="Roon">Punta tayo <marker>Doon</marker></example>
-                    <example correction="Riyan">Bahay <marker>Diyan</marker></example>
-                    <example correction="Rin">Gagawin ko <marker>Din</marker></example>
+        <rulegroup id="O_TO_U_REDUPLICATION" name="O to U Hyphenation Error">
+            <rule>
+                <pattern>
+                    <token regexp="yes">(an|sin|pis|pit)u</token>
+                    <token>-</token>
+                    <token regexp="yes">(ano|sino|piso|pito)</token>
+                </pattern>
+                <message>[KWF-MMP-7.5] Ang 'o' ay hindi dapat palitan ng 'u' kapag inuulit ang salitang-ugat. Dapat ay: <suggestion><match no="1" regexp_match="u$" regexp_replace="o"/>-<match no="3"/></suggestion></message>
+                <short>Maling O-to-U</short>
+                <example correction="ano-ano">Sila ay <marker>anu-ano</marker></example>
+                <example>Ang mga ano-ano.</example>
+            </rule>
+            <rule>
+                <pattern>
+                    <token regexp="yes">taun</token>
+                    <token>-</token>
+                    <token regexp="yes">taon</token>
+                </pattern>
+                <message>[KWF-MMP-7.5] Dapat ay: <suggestion>taon-taon</suggestion></message>
+                <short>Maling O-to-U</short>
+                <example correction="taon-taon">Ito ay ginagawa <marker>taun-taon</marker></example>
+                <example>Ito ay ginagawa taon-taon.</example>
+            </rule>
+        </rulegroup>
 
-                    <example>Maaari Din</example>
-                    <example>Araw-araw Daw</example>
-                    <example>Sari-sari Dito</example>
-                    <example>Kutsara Diyan</example>
-                </rule>
+        <rulegroup id="IKA_NUMERO" name="Ika at Numero Hyphenation">
+            <rule>
+                <pattern>
+                    <token regexp="yes">ika([0-9]+)</token>
+                </pattern>
+                <message>[KWF-MMP-11.8] Kailangan ng gitling sa 'ika' at numero. Dapat ay: <suggestion><match no="1" regexp_match="ika([0-9]+)" regexp_replace="ika-$1"/></suggestion></message>
+                <short>Kulang sa Gitling</short>
+                <example correction="ika-10">Siya ay nasa <marker>ika10</marker> baitang.</example>
+                <example>Nasa ika-10 baitang na siya.</example>
+            </rule>
+        </rulegroup>
 
-            </rulegroup>
-        </category>
-    </rules>
-</language>
+    </category>
+</rules>
